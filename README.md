@@ -1,6 +1,6 @@
 # MiniCoreComisiones
 
-Sistema web para el cálculo automático de comisiones por ventas según reglas preestablecidas. Desarrollado en ASP.NET Core MVC como parte del proyecto académico para la materia inegnieria web – UDLA.
+Sistema web para el cálculo automático de comisiones por ventas según reglas preestablecidas. Desarrollado en ASP.NET Core MVC como parte del proyecto académico para la materia ingeniería web web – UDLA.
 
 ---
 

@@ -12,12 +12,14 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 var app = builder.Build();
 
-// Cargar datos de prueba al iniciar
+// Aplicar migraciones y cargar datos de prueba
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
     var context = services.GetRequiredService<AppDbContext>();
-    DbInitializer.Inicializar(context);
+
+    context.Database.Migrate(); // ✅ Aplica migraciones automáticamente en producción
+    DbInitializer.Inicializar(context); // ✅ Carga datos si no existen
 }
 
 // Configuración del pipeline HTTP
@@ -34,7 +36,7 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-// Ruta por defecto (irá a ComisionesController → Index)
+// Ruta por defecto
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Comisiones}/{action=Index}/{id?}");

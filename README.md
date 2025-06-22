@@ -76,6 +76,7 @@ Si un vendedor tiene $350 en ventas y la regla es del 10%, la comisión es $35.
 
 Proyecto desarrollado por **Mateo Ramirez**  
 Universidad de las Américas – 2025
+mateo.ramirez.lopez@udla.edu.ec
 
 ---
 

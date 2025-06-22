@@ -1,47 +1,49 @@
 # MiniCoreComisiones
 
-Sistema web para el cálculo automático de comisiones por ventas según reglas preestablecidas. Desarrollado en ASP.NET Core MVC como parte del proyecto académico para la materia ingeniería web web – UDLA.
+Sistema web para el cálculo automático de comisiones por ventas según reglas preestablecidas. Desarrollado en **ASP.NET Core MVC** como parte del proyecto académico para la materia **Ingeniería Web – UDLA**.
 
 ---
 
-## Funcionalidad principal
+## 🔧 Funcionalidad principal
 
 El sistema permite seleccionar un vendedor y un rango de fechas para calcular:
 
-- Total de ventas dentro del período
-- Regla de comisión aplicada (por rangos)
-- Porcentaje y monto de comisión
+- ✅ Total de ventas dentro del período
+- ✅ Regla de comisión aplicada (por rangos)
+- ✅ Porcentaje y monto de comisión
 
-Ejemplo:  
+📌 **Ejemplo:**  
 Si un vendedor tiene $350 en ventas y la regla es del 10%, la comisión es $35.
 
 ---
 
-## 🗂Estructura del Proyecto
+## 🗂 Estructura del Proyecto
 
-- **Modelo de Datos:**  
-  - `Vendedor`  
-  - `Venta`  
-  - `ReglaComision`
+### 📌 Modelo de Datos
 
-- **Relaciones:**  
-  - Un `Vendedor` tiene muchas `Ventas`  
-  - El sistema busca la regla aplicable según el total de ventas acumuladas
+- `Vendedor`
+- `Venta`
+- `ReglaComision`
 
----
+### 🔁 Relaciones
 
-## Extras implementados
-
-- Estilo visual con Bootstrap 5 (modo oscuro)
-- Nombre del vendedor destacado en resultados
-- Visualización clara del porcentaje aplicado
-- Validación de fechas y selección obligatoria
-- Rango de fechas disponible mostrado dinámicamente
-- Interfaz responsive para móvil y escritorio
+- Un **vendedor** tiene muchas **ventas**
+- El sistema busca la **regla** aplicable según el total de ventas acumuladas
 
 ---
 
-## Tecnologías
+## ✨ Extras implementados
+
+- 🎨 Estilo visual con **Bootstrap 5** (modo oscuro)
+- 🧾 Nombre del vendedor destacado en resultados
+- 📊 Visualización clara del porcentaje aplicado
+- 📅 Validación de fechas y selección obligatoria
+- 📈 Rango de fechas disponible mostrado dinámicamente
+- 📱 Interfaz responsive para móvil y escritorio
+
+---
+
+## 🧪 Tecnologías utilizadas
 
 - ASP.NET Core MVC (.NET 8)
 - Entity Framework Core
@@ -52,9 +54,30 @@ Si un vendedor tiene $350 en ventas y la regla es del 10%, la comisión es $35.
 
 ---
 
-## Cómo desplegar en local
+## 🧭 Cómo desplegar en local
 
 1. Clonar el repositorio:
+
 ```bash
 git clone https://github.com/TU_USUARIO/MiniCoreComisiones.git
 cd MiniCoreComisiones
+Ejecutar en Visual Studio / VS Code
+Asegúrate de tener instalado .NET 8 SDK y restaurar las dependencias.
+
+🌐 Enlaces importantes
+🔹 Sitio desplegado en Render (producción):
+➡️ https://minicorecomisiones.onrender.com
+
+🔹 Video explicativo del proyecto (YouTube):
+📽️ https://youtu.be/zyll-dYgbPE?si=HlNwypzkWAsHLHM6
+
+📚 Recursos adicionales
+Documentación ASP.NET MVC = https://learn.microsoft.com/en-us/aspnet/core/mvc/overview?view=aspnetcore-9.0
+
+Tutorial EF Core = https://learn.microsoft.com/en-us/ef/core/
+
+Video de guía de MVC .NET = https://youtu.be/sZVqGIW6Jno?si=donxtU_2rc0Uq_6I
+
+👤 Información de contacto
+Mateo Ramirez (Desarrollador)
+📍 Proyecto académico – UDLA, 2025

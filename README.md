@@ -52,6 +52,31 @@ Si un vendedor tiene $350 en ventas y la regla es del 10%, la comisión es $35.
 - Render (para despliegue en la nube)
 - GitHub (control de versiones)
 
+## 🌍 Cómo ver el proyecto y aprender más
+
+### 🔗 Enlaces importantes
+
+- 🌐 **Sitio desplegado en Render (producción):**  
+  [https://minicorecomisiones.onrender.com](https://minicorecomisiones.onrender.com)
+
+- 📺 **Video explicativo del proyecto (YouTube):**  
+  [https://youtu.be/zyll-dYgbPE?si=HlNwypzkWAsHLHM6](https://youtu.be/zyll-dYgbPE?si=HlNwypzkWAsHLHM6)
+
+---
+
+### 📚 Recursos adicionales
+
+- 📘 [Documentación oficial ASP.NET MVC](https://learn.microsoft.com/en-us/aspnet/core/mvc/overview?view=aspnetcore-8.0)  
+- 📘 [Tutorial oficial de Entity Framework Core](https://learn.microsoft.com/en-us/ef/core/)  
+- 🎥 [Guía completa de ASP.NET MVC en YouTube](https://youtu.be/sZVqGlW6Jno?si=donxtU_2rc0Uq_6I)
+
+---
+
+## 👤 Autor
+
+Proyecto desarrollado por **Teo**  
+Universidad de las Américas – 2025
+
 ---
 
 ## 🧭 Cómo desplegar en local
@@ -63,21 +88,3 @@ git clone https://github.com/TU_USUARIO/MiniCoreComisiones.git
 cd MiniCoreComisiones
 Ejecutar en Visual Studio / VS Code
 Asegúrate de tener instalado .NET 8 SDK y restaurar las dependencias.
-
-🌐 Enlaces importantes
-🔹 Sitio desplegado en Render (producción):
-➡️ https://minicorecomisiones.onrender.com
-
-🔹 Video explicativo del proyecto (YouTube):
-📽️ https://youtu.be/zyll-dYgbPE?si=HlNwypzkWAsHLHM6
-
-📚 Recursos adicionales
-Documentación ASP.NET MVC = https://learn.microsoft.com/en-us/aspnet/core/mvc/overview?view=aspnetcore-9.0
-
-Tutorial EF Core = https://learn.microsoft.com/en-us/ef/core/
-
-Video de guía de MVC .NET = https://youtu.be/sZVqGIW6Jno?si=donxtU_2rc0Uq_6I
-
-👤 Información de contacto
-Mateo Ramirez (Desarrollador)
-📍 Proyecto académico – UDLA, 2025

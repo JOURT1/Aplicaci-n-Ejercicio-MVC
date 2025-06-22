@@ -68,7 +68,7 @@ Si un vendedor tiene $350 en ventas y la regla es del 10%, la comisión es $35.
 
 - 📘 [Documentación oficial ASP.NET MVC](https://learn.microsoft.com/en-us/aspnet/core/mvc/overview?view=aspnetcore-8.0)  
 - 📘 [Tutorial oficial de Entity Framework Core](https://learn.microsoft.com/en-us/ef/core/)  
-- 🎥 [Guía completa de ASP.NET MVC en YouTube](https://youtu.be/sZVqGlW6Jno?si=donxtU_2rc0Uq_6I)
+- 🎥 [Guía completa de ASP.NET MVC en YouTube](https://youtu.be/sZVqGIW6Jno?si=ZAFDyRnhNinXSGT-)
 
 ---
 

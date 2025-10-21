@@ -2,12 +2,12 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
 
-# Copiar archivos del proyecto
-COPY *.csproj ./
+# Copiar archivos del proyecto desde MiniCoreComisiones
+COPY MiniCoreComisiones/*.csproj ./
 RUN dotnet restore
 
 # Copiar el resto y publicar
-COPY . ./
+COPY MiniCoreComisiones/. ./
 RUN dotnet publish -c Release -o out
 
 # Etapa de ejecución

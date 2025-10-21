@@ -60,7 +60,7 @@ Si un vendedor tiene $350 en ventas y la regla es del 10%, la comisión es $35.
   https://aplicacion-ejercicio-mvc.onrender.com 
 
 - **Video explicativo del proyecto (YouTube):**  
- 
+ https://youtu.be/N2blJ8Pd16E 
 
 ---
 

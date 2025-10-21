@@ -3,6 +3,10 @@ using MiniCoreComisiones.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Configurar puerto para Render (usar variable de entorno PORT)
+var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+builder.WebHost.UseUrls($"http://0.0.0.0:{port}");
+
 // Agregar servicios MVC y base de datos
 builder.Services.AddControllersWithViews();
 

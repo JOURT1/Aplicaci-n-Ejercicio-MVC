@@ -57,10 +57,10 @@ Si un vendedor tiene $350 en ventas y la regla es del 10%, la comisión es $35.
 ### Enlaces importantes
 
 - **Sitio desplegado en Render (producción):**  
-  [https://minicorecomisiones.onrender.com](https://minicorecomisiones.onrender.com)
+  
 
 - **Video explicativo del proyecto (YouTube):**  
-  [https://youtu.be/zyll-dYgbPE?si=HlNwypzkWAsHLHM6](https://youtu.be/zyll-dYgbPE?si=HlNwypzkWAsHLHM6)
+ 
 
 ---
 
@@ -74,9 +74,9 @@ Si un vendedor tiene $350 en ventas y la regla es del 10%, la comisión es $35.
 
 ## Autor
 
-Proyecto desarrollado por **Mateo Ramirez**  
-Universidad de las Américas – 2025
-mateo.ramirez.lopez@udla.edu.ec
+Proyecto desarrollado por **Jhoel Suarez**  
+Ingeniería de Software – Universidad de las Américas (UDLA) – 2025  
+jhoel.suarez@udla.edu.ec
 
 ---
 

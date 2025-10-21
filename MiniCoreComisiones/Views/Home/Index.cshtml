@@ -1,8 +1,104 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Inicio";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<!-- Hero Section -->
+<div class="bg-dark text-white text-center py-5 rounded shadow-lg mb-5">
+    <h1 class="display-3 fw-bold">
+        <i class="fas fa-chart-line text-warning"></i> MiniCore Comisiones
+    </h1>
+    <p class="lead mt-3">
+        Sistema web para el cálculo automático de comisiones por ventas
+    </p>
+    <p class="text-muted">
+        Desarrollado con ASP.NET Core MVC | Universidad de las Américas
+    </p>
+    <div class="mt-4">
+        <a asp-controller="Comisiones" asp-action="Index" class="btn btn-warning btn-lg px-5">
+            <i class="fas fa-calculator"></i> Calcular Comisiones
+        </a>
+    </div>
+</div>
+
+<!-- Features Section -->
+<div class="row mt-5 g-4">
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0 text-center">
+            <div class="card-body">
+                <div class="mb-3">
+                    <i class="fas fa-users fa-3x text-primary"></i>
+                </div>
+                <h5 class="card-title fw-bold">Gestión de Vendedores</h5>
+                <p class="card-text">
+                    Selecciona vendedores y consulta sus ventas en cualquier rango de fechas.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0 text-center">
+            <div class="card-body">
+                <div class="mb-3">
+                    <i class="fas fa-percentage fa-3x text-success"></i>
+                </div>
+                <h5 class="card-title fw-bold">Cálculo Automático</h5>
+                <p class="card-text">
+                    Las comisiones se calculan automáticamente según reglas por rangos de venta.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0 text-center">
+            <div class="card-body">
+                <div class="mb-3">
+                    <i class="fas fa-chart-bar fa-3x text-warning"></i>
+                </div>
+                <h5 class="card-title fw-bold">Reportes Detallados</h5>
+                <p class="card-text">
+                    Visualiza todas las ventas del período y el monto de comisión generado.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Technology Stack -->
+<div class="mt-5 p-4 bg-light rounded shadow-sm">
+    <h3 class="text-center mb-4">
+        <i class="fas fa-cogs"></i> Tecnologías Utilizadas
+    </h3>
+    <div class="row text-center">
+        <div class="col-md-3">
+            <i class="fab fa-microsoft fa-3x text-primary mb-2"></i>
+            <p class="fw-bold">ASP.NET Core 8</p>
+        </div>
+        <div class="col-md-3">
+            <i class="fas fa-database fa-3x text-success mb-2"></i>
+            <p class="fw-bold">Entity Framework</p>
+        </div>
+        <div class="col-md-3">
+            <i class="fab fa-bootstrap fa-3x text-purple mb-2"></i>
+            <p class="fw-bold">Bootstrap 5</p>
+        </div>
+        <div class="col-md-3">
+            <i class="fas fa-file-code fa-3x text-warning mb-2"></i>
+            <p class="fw-bold">SQLite</p>
+        </div>
+    </div>
+</div>
+
+<!-- Info Section -->
+<div class="mt-5 text-center">
+    <div class="alert alert-info">
+        <h5>
+            <i class="fas fa-info-circle"></i> ¿Cómo funciona?
+        </h5>
+        <p class="mb-0">
+            Selecciona un vendedor y un rango de fechas. El sistema calculará automáticamente
+            el total de ventas y aplicará la regla de comisión correspondiente según el monto acumulado.
+        </p>
+    </div>
 </div>

@@ -3,84 +3,133 @@
     ViewData["Title"] = "Calcular Comisión";
 }
 
-<div class="text-center mt-4">
-    <h1 class="fw-bold text-primary">
-        <i class="fas fa-chart-line"></i> MiniCore | Reporte de Comisiones
+<div class="text-center mb-4">
+    <h1 class="fw-bold text-dark">
+        <i class="fas fa-calculator text-warning"></i> Calcular Comisión de Ventas
     </h1>
+    <p class="text-muted">Selecciona un vendedor y rango de fechas para calcular la comisión correspondiente</p>
 </div>
 
-<div class="container mt-5">
-    <h2 class="mb-4 text-center text-white">
-        <i class="fas fa-calculator"></i> Calcular Comisión de Ventas
-    </h2>
-
-    <form method="get" class="row g-3 bg-dark text-white p-4 rounded shadow">
-        <div class="col-md-4">
-            <label class="form-label"><i class="fas fa-user"></i> Vendedor</label>
-            <select name="vendedorId" class="form-select" required>
-                <option value="">-- Selecciona --</option>
-                @foreach (var vendedor in ViewBag.Vendedores)
-                {
-                    <option value="@vendedor.VendedorId">@vendedor.Nombre</option>
-                }
-            </select>
+<div class="container">
+    <!-- Formulario de búsqueda -->
+    <div class="card shadow-lg border-0 mb-4">
+        <div class="card-header bg-dark text-white text-center py-3">
+            <h5 class="mb-0">
+                <i class="fas fa-search"></i> Filtros de Búsqueda
+            </h5>
         </div>
+        <div class="card-body bg-light">
+            <form method="get" class="row g-3">
+                <div class="col-md-4">
+                    <label class="form-label fw-bold">
+                        <i class="fas fa-user text-primary"></i> Vendedor
+                    </label>
+                    <select name="vendedorId" class="form-select form-select-lg" required>
+                        <option value="">-- Selecciona un vendedor --</option>
+                        @foreach (var vendedor in ViewBag.Vendedores)
+                        {
+                            <option value="@vendedor.VendedorId">@vendedor.Nombre</option>
+                        }
+                    </select>
+                </div>
 
-        <div class="col-md-4">
-            <label class="form-label"><i class="fas fa-calendar-alt"></i> Fecha Inicio</label>
-            <input type="date" name="fechaInicio" class="form-control" required />
+                <div class="col-md-3">
+                    <label class="form-label fw-bold">
+                        <i class="fas fa-calendar-alt text-success"></i> Fecha Inicio
+                    </label>
+                    <input type="date" name="fechaInicio" class="form-control form-control-lg" required />
+                </div>
+
+                <div class="col-md-3">
+                    <label class="form-label fw-bold">
+                        <i class="fas fa-calendar-check text-success"></i> Fecha Fin
+                    </label>
+                    <input type="date" name="fechaFin" class="form-control form-control-lg" required />
+                </div>
+
+                <div class="col-md-2 d-flex align-items-end">
+                    <button type="submit" class="btn btn-warning btn-lg w-100">
+                        <i class="fas fa-calculator"></i> Calcular
+                    </button>
+                </div>
+            </form>
+
+            @if (ViewBag.FechaMin != null && ViewBag.FechaMax != null)
+            {
+                <div class="text-center mt-3">
+                    <span class="badge bg-info fs-6">
+                        <i class="fas fa-info-circle"></i> Rango disponible: @ViewBag.FechaMin – @ViewBag.FechaMax
+                    </span>
+                </div>
+            }
         </div>
+    </div>
 
-        <div class="col-md-4">
-            <label class="form-label"><i class="fas fa-calendar-alt"></i> Fecha Fin</label>
-            <input type="date" name="fechaFin" class="form-control" required />
-        </div>
-
-        <div class="col-12 text-center">
-            <button type="submit" class="btn btn-warning px-5 mt-3">
-                <i class="fas fa-search"></i> Calcular
-            </button>
-        </div>
-    </form>
-
-    @if (ViewBag.FechaMin != null && ViewBag.FechaMax != null)
+    <!-- Resultados -->
+    @if (Model != null && Model.Count > 0)
     {
-        <div class="text-center mt-2">
-            <span class="badge bg-secondary">
-                Rango disponible: @ViewBag.FechaMin – @ViewBag.FechaMax
-            </span>
+        <div class="card shadow-lg border-0 mb-4">
+            <div class="card-header bg-primary text-white py-3">
+                <h5 class="mb-0">
+                    <i class="fas fa-list-alt"></i> Ventas de <span class="text-warning fw-bold">@ViewBag.NombreVendedor</span>
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover table-bordered align-middle">
+                        <thead class="table-dark">
+                            <tr>
+                                <th class="text-center"><i class="fas fa-calendar"></i> Fecha</th>
+                                <th class="text-center"><i class="fas fa-dollar-sign"></i> Monto</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var venta in Model)
+                            {
+                                <tr>
+                                    <td class="text-center">@venta.FechaVenta.ToShortDateString()</td>
+                                    <td class="text-end fw-bold text-success">$@String.Format("{0:N2}", venta.Monto)</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Resumen de Comisión -->
+                <div class="card bg-success text-white mt-4">
+                    <div class="card-body">
+                        <div class="row text-center">
+                            <div class="col-md-4">
+                                <h6 class="text-uppercase">Total de Ventas</h6>
+                                <h2 class="fw-bold">
+                                    <i class="fas fa-shopping-cart"></i> $@String.Format("{0:N2}", ViewBag.TotalVentas)
+                                </h2>
+                            </div>
+                            <div class="col-md-4">
+                                <h6 class="text-uppercase">Porcentaje Aplicado</h6>
+                                <h2 class="fw-bold">
+                                    <i class="fas fa-percentage"></i> @String.Format("{0:N2}", ViewBag.ReglaPorcentaje)%
+                                </h2>
+                            </div>
+                            <div class="col-md-4">
+                                <h6 class="text-uppercase">Comisión Total</h6>
+                                <h2 class="fw-bold">
+                                    <i class="fas fa-dollar-sign"></i> $@String.Format("{0:N2}", ViewBag.Comision)
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     }
-
-    @if (Model.Count > 0)
+    else if (Model != null && Model.Count == 0 && ViewBag.VendedorSeleccionado != null)
     {
-        <div class="mt-5">
-            <h4 class="text-white">
-                <i class="fas fa-list"></i> Ventas encontradas para <span class="text-info">@ViewBag.NombreVendedor</span>
-            </h4>
-
-            <table class="table table-striped table-bordered mt-3">
-                <thead class="table-warning">
-                    <tr>
-                        <th>Fecha</th>
-                        <th>Monto</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var venta in Model)
-                    {
-                        <tr>
-                            <td>@venta.FechaVenta.ToShortDateString()</td>
-                            <td>$@String.Format("{0:N2}", venta.Monto)</td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-
-            <div class="alert alert-success">
-                <p><strong><i class="fas fa-dollar-sign"></i> Total de Ventas:</strong> $@String.Format("{0:N2}", ViewBag.TotalVentas)</p>
-                <p><strong><i class="fas fa-percentage"></i> Comisión Aplicada (@String.Format("{0:N2}", ViewBag.ReglaPorcentaje)%):</strong> $@String.Format("{0:N2}", ViewBag.Comision)</p>
-            </div>
+        <div class="alert alert-warning text-center shadow">
+            <h5>
+                <i class="fas fa-exclamation-triangle"></i> No se encontraron ventas
+            </h5>
+            <p class="mb-0">No hay ventas registradas para el vendedor seleccionado en ese rango de fechas.</p>
         </div>
     }
 </div>
